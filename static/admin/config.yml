@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: test-repo
   repo: iamtimsmith/netlify-portfolio
 
 media_folder: static/assets
