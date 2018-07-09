@@ -35,7 +35,7 @@ export default class Index extends React.Component {
 
 export const query = graphql`
   query homeQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort:{fields:[frontmatter___priority], order:ASC}) {
       edges {
         node {
           frontmatter {

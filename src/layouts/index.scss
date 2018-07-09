@@ -1,3 +1,6 @@
+/* Site styles */
+@import '../assets/variables';
+
 html {
   font-size:10px;
   body {
@@ -21,4 +24,24 @@ html {
   h6, .is-size-6 {
     font-size:1.6rem!important;
   }
+  button, .button {
+    border:2px solid $black;
+    background:$clear;
+    border-radius:0;
+    transition:all .25s;
+    font-size:1.6rem;
+    &:hover {
+      border:2px solid $black;
+      background:$black;
+      color:white;
+    }
+  }
+  .is-12 {
+    width:100%;
+  }
+  input:focus, 
+  button:focus, 
+  textarea:focus, 
+  select:focus, 
+  a:focus {outline:none!important;}
 }
