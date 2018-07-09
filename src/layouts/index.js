@@ -25,14 +25,26 @@ export default class Layout extends Component {
       ]
     }
   }
-
+  componentDidMount() {
+    window.onscroll = () => {
+      var top = window.pageYOffset
+      var navbar = document.querySelector(".is-home .navbar")
+      if(top < 650) {	
+        navbar.classList.add('clear')
+      }
+      else {
+        navbar.classList.remove('clear')
+      }
+    }
+  }
+  
   render() {
     return (
-      <div>
+      <div className={this.props.location.pathname == '/' && ('is-home')}>
         <Helmet
           title={this.state.siteTitle}
           meta={[]} />
-        <div className='content'>
+        <div className={`content `}>
           <Header 
             title={this.state.siteTitle}
             nav={this.state.siteNav}

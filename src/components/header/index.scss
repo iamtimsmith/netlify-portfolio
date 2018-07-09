@@ -97,3 +97,22 @@
     }
   }
 }
+
+.is-home {
+  .navbar {
+    transition:all .25s;
+    a {
+      transition:all .25s;
+    }
+    &.clear {
+      background:$clear;
+      .navbar-brand {
+        visibility:hidden;
+        opacity:0;
+      }
+      a {
+        color:$black;
+      }
+    }
+  }
+}

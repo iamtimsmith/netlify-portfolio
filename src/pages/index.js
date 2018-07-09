@@ -3,6 +3,7 @@ import './index.scss';
 
 // Components
 import Item from '../components/portfolioitems/';
+import Contact from '../components/contactform/';
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -11,7 +12,7 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <div class='is-home'>
+      <div>
         <section className='section hero is-large has-text-centered'>
           <div className='text'>
             <h1 className='is-size-1'>Freelance Web Developer.</h1>
@@ -23,10 +24,17 @@ export default class Index extends React.Component {
           {this.props.data.allMarkdownRemark.edges.map( ({node}) => (
             <Item 
               name={node.frontmatter.title} 
-              tags={node.frontmatter.tags} 
+              tags={node.frontmatter.tags}                    
               url={node.frontmatter.path} 
               img={node.frontmatter.thumbOne} />
           ))}
+        </section>
+        <section className='section'>
+          <div className='columns is-centered'>
+            <div className='column is-6'>
+              <Contact buttonText='Hire Me!' />
+            </div>
+          </div>
         </section>
       </div>
     )
