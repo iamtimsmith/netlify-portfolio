@@ -25,6 +25,9 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: tags, label: Tags }
+      - { name: priority, label: Priority }
+      - { name: last, label: Last }
+      - { name: next, label: Next }
       - { name: body, label: Body, widget: markdown }
       - { name: fullPage, label: Full Page, widget: image }
       - { name: thumbOne, label: Thumbnail One, widget: image }
