@@ -1,0 +1,10 @@
+/* Social Media Icon navigation styles */
+@import '../../assets/variables';
+
+.social {
+  list-style:none!important;
+  display:flex;
+  justify-content:space-around;
+  align-self:flex-end;
+  margin:0;
+}

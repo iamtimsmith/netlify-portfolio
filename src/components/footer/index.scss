@@ -1,0 +1,17 @@
+/* Footer styles */
+@import '../../assets/variables';
+
+.footer {
+  background:$black;
+  ul {
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+    li {
+      a {
+        color:white;
+        margin:0 15px;
+      }
+    }
+  }
+}
