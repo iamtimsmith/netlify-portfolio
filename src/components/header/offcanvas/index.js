@@ -12,7 +12,7 @@ export default (props) => {
             <Link to='/'>Home</Link>
           </li>
           {props.nav.map(item => (
-              <li>
+              <li key={item.label}>
                 <Link to={item.href}>{item.label}</Link>
               </li>
             ))}

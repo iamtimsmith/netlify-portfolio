@@ -18,7 +18,7 @@ export default (props) => {
         </li>
       }
       {props.nav.map(item => (
-        <li style={{marginTop:0}} className={props.itemClass}>
+        <li key={item.label} style={{marginTop:0}} className={props.itemClass}>
           <Link to={item.href}>{item.label}</Link>
         </li>
       ))}

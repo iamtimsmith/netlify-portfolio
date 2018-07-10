@@ -5,7 +5,7 @@ export default (props) => {
   return (
     <ul className="social">
       {props.social.map(item => (
-        <li>
+        <li key={item.icon}>
           <a href={item.href} style={{ fontSize:`${props.size}rem`}}>
             <i className={`fa fa-${item.icon}`}></i>
           </a>

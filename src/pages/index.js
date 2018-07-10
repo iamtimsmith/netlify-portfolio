@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import './index.scss';
 
 // Components
@@ -17,12 +18,13 @@ export default class Index extends React.Component {
           <div className='text'>
             <h1 className='is-size-1'>Freelance Web Developer.</h1>
             <p className='is-size-3'>Person.</p>
-            <a href='#contact' className='button is-medium'>Hire Me!</a>
+            <AnchorLink href='#contact' className='button is-medium scroll' data-speed='1000'>Hire Me!</AnchorLink>
           </div>
         </section>
         <section className='portfolio-items columns is-multiline'>
           {this.props.data.allMarkdownRemark.edges.map( ({node}) => (
-            <Item 
+            <Item
+              key={node.frontmatter.title}
               name={node.frontmatter.title} 
               tags={node.frontmatter.tags}                    
               url={node.frontmatter.path} 
