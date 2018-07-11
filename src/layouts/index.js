@@ -29,11 +29,13 @@ export default class Layout extends Component {
     window.onscroll = () => {
       var top = window.pageYOffset
       var navbar = document.querySelector(".is-home .navbar")
-      if(top < 650) {	
-        navbar.classList.add('clear')
-      }
-      else {
-        navbar.classList.remove('clear')
+      if (this.props.location.pathname == '/') {
+        if(top < 650) {	
+          navbar.classList.add('clear')
+        }
+        else {
+          navbar.classList.remove('clear')
+        }
       }
     }
   }

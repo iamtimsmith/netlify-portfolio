@@ -1,0 +1,20 @@
+/* Work Items */
+@import '../../assets/variables';
+@import '../../assets/keyframes';
+
+.portfolio-items {
+  margin-top:55px!important;
+  margin-bottom:0!important;
+}
+@for $i from 1 through 100 {
+  .portfolio-item:nth-child(#{$i}) {
+  $delay: $i * 0.5s;
+  position:relative;
+  top:20px;
+  opacity:0;
+  animation:onLoad 1s linear $delay 1 forwards;
+  -webkit-animation:onLoad 1s linear $delay 1 forwards;
+  -moz-animation:onLoad 1s linear $delay 1 forwards;
+  -o-animation:onLoad 1s linear $delay 1 forwards;
+  }
+}
