@@ -43,3 +43,4 @@ collections:
         fields:
           - { name: title, label: Title }
           - { name: body, label: Body }
+          - { name: img, label: Headshot, widget: image }
