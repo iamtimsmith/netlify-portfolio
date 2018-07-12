@@ -33,3 +33,13 @@ collections:
       - { name: thumbOne, label: Thumbnail One, widget: image }
       - { name: thumbTwo, label: Thumbnail Two, widget: image }
       - { name: url, label: Site URL }
+      
+  - name: pages
+    label: Pages
+    files:
+      - label: About
+        name: about
+        file: "src/pages/about/index.md"
+        fields:
+          - { name: title, label: Title }
+          - { name: body, label: Body }
