@@ -42,5 +42,5 @@ collections:
         file: "src/pages/about/index.md"
         fields:
           - { name: title, label: Title }
-          - { name: body, label: Body }
+          - { name: body, label: Body, widget: markdown }
           - { name: img, label: Headshot, widget: image }
