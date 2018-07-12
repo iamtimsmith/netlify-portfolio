@@ -9,10 +9,10 @@ export default class PortfolioPage extends React.Component {
   }
   componentDidMount() {
     const page = document.getElementById('portfolioPage');
-    page.addEventListener('scroll', this.handleScroll, true);
+    window.addEventListener('scroll', this.handleScroll, true);
   }
   handleScroll(e) {
-    const top = document.getElementById('portfolioPage').pageYOffset;
+    const top = window.pageYOffset;
     const content = document.querySelector('.section:nth-child(2)');
     if (top >= content.offsetTop - 200) {
       content.classList.add('display');
@@ -57,14 +57,6 @@ export default class PortfolioPage extends React.Component {
         </section>
       </div>
     )
-  }
-}
-
-window.onscroll = () => {
-  const top = window.pageYOffset;
-  const content = document.querySelector('.section:nth-child(2)').offsetTop;
-  if (top >= content) {
-    console.log(content);
   }
 }
 
