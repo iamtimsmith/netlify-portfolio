@@ -8,10 +8,11 @@ export default class PortfolioPage extends React.Component {
     this.handleScroll = this.handleScroll.bind(this);
   }
   componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll, true);
+    const page = document.getElementById('portfolioPage');
+    page.addEventListener('scroll', this.handleScroll, true);
   }
   handleScroll(e) {
-    const top = window.pageYOffset;
+    const top = document.getElementById('portfolioPage').pageYOffset;
     const content = document.querySelector('.section:nth-child(2)');
     if (top >= content.offsetTop - 200) {
       content.classList.add('display');
@@ -40,7 +41,7 @@ export default class PortfolioPage extends React.Component {
             <span className="divide"></span>
             <span className="wheel"></span>
           </div>
-          
+
           <div className="columns">
             <div className="column" id="img1">
               <img src={ port.frontmatter.fullPage } alt={port.frontmatter.name} />
