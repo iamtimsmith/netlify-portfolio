@@ -9,11 +9,11 @@ export default (props) => {
       <div>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <Link onClick={closeOffCanvas} to='/'>Home</Link>
           </li>
           {props.nav.map(item => (
               <li key={item.label}>
-                <Link to={item.href}>{item.label}</Link>
+                <Link onClick={closeOffCanvas} to={item.href}>{item.label}</Link>
               </li>
             ))}
         </ul>
@@ -21,4 +21,11 @@ export default (props) => {
       </div>
     </aside>
   )
+}
+
+
+const closeOffCanvas = () => {
+  document.querySelector('.offcanvas-toggle').classList.remove('active');
+  document.querySelector('.offcanvas').classList.remove('showing');
+  
 }
