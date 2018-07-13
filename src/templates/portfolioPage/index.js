@@ -24,7 +24,7 @@ export default class PortfolioPage extends React.Component {
       <div className='container' id='portfolioPage' onScroll={this.handleScroll}>
         <section className="section has-text-centered">
           {/* Title and tags */}
-          <h1 className="is-size-1 post-header">{ port.frontmatter.title }</h1>
+          <h1 className="is-size-2 post-header">{ port.frontmatter.title }</h1>
           <span className="line"></span>
           <p className='is-size-5 post-tags'>{port.frontmatter.tags}</p>
 

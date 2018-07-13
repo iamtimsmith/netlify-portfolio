@@ -3,8 +3,8 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import './index.scss';
 
 // Components
-import Item from '../components/portfolioitems/';
-import Contact from '../components/contactform/';
+import Item from '../components/portfolioitems';
+import Contact from '../components/contactform';
 
 export default class Index extends React.Component {
   constructor(props) {

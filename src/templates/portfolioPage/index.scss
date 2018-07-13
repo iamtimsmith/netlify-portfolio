@@ -20,6 +20,7 @@
   }
   .post-header {
     font-family:$serif;
+    font-weight:normal;
   }
   .line {
     display:block;
@@ -35,7 +36,6 @@
   .post-tags {
     margin:20px auto 80px;
     color:$grey;
-    font-weight:bold;
     text-transform:uppercase;
   }
   #last {
@@ -151,6 +151,7 @@
       .button {
         display:flex;
         opacity:1;
+        font-size:2.4rem;
       }
     }
   }
