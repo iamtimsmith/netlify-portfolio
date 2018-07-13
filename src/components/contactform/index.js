@@ -13,7 +13,7 @@ export default (props) => (
       <input type="text" name="email" placeholder="Email" required />
       <p style={{display:'none'}}>Empty: <input type="text" name="url" /></p>
       <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit" name="submit" onClick={() => formSumbit()}>{props.buttonText}</button>
+      <input type="submit" name="submit" value={props.buttonText} onClick={() => formSumbit()} />
     </form>
   </div>
 )

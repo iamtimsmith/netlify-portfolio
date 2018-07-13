@@ -24,6 +24,9 @@ iframe.is-hidden {
     }
   }
   input[type='submit'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     width:30%;
     display:block;
     margin:0 auto;
