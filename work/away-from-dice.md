@@ -9,6 +9,6 @@ next: /scffld
 fullPage: /assets/afd-frontpage.jpg
 thumbOne: /assets/afd-mockup1.jpg
 thumbTwo: /assets/afd-mockup2.jpg
-url: http://awayfromdice.iamtimsmith.com
+url: 'http://awayfromdice.iamtimsmith.com'
 ---
-This is a website I built for the guests at my wedding. I wanted it to act as an RSVP and schedule while providing ideas for fun things to do. Each item in the stuff to do page links to the activity websites.
+Some friends and I had a podcast called Away from Dice. This website was built as a way to get things up and running and to display our podcast episodes.
