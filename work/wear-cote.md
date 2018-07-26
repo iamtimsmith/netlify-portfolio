@@ -3,8 +3,8 @@ path: /wear-cote
 date: '2018-07-26'
 title: Wear-Cote
 tags: '#wordpress #jquery #php #sass'
-priority: '10'
-last: /tim-smith
+priority: '7'
+last: /iamtimsmith
 next: /the-effie-afton
 fullPage: /assets/wearcote_frontpage.png
 thumbOne: /assets/wearcote_mockup1.jpg
