@@ -21,7 +21,8 @@ export default class Layout extends Component {
         {icon:'codepen', href:'http://codepen.io/iamtimsmith/'},
         {icon:'linkedin', href:'https://www.linkedin.com/in/tim-smith-1a651aa0'},
         {icon:'twitter', href:'https://twitter.com/iam_timsmith'},
-        {icon:'github', href:'https://github.com/iamtimsmith'}
+        {icon:'github', href:'https://github.com/iamtimsmith'},
+        {icon:'devto', href:'https://dev.to/iam_timsmith'}
       ]
     }
   }
