@@ -1,14 +1,25 @@
 import React from "react";
 import "./index.scss";
 
+import Summary from "../../components/postSummary";
+
 export default ({ data }) => (
   <div className="container" id="blog">
-    <h1>Blog</h1>
-    <ul>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <li>{node.frontmatter.title}</li>
-      ))}
-    </ul>
+    <section className="section">
+      <h1 className="is-size-2">Blog</h1>
+      <div className="columns is-multiline">
+        {data.allMarkdownRemark.edges.map(({ node }) => (
+          <div className="column is-4" key={node.id}>
+            <Summary
+              title={node.frontmatter.title}
+              excerpt={node.excerpt}
+              path={node.frontmatter.path}
+              tags={["JavaScript", "React"]}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
   </div>
 );
 

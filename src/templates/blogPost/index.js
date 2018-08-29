@@ -8,14 +8,24 @@ export default class BlogPost extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
     return (
-      <div className="container" id="blog-post">
-        <h1 className="is-size-3">{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
-        <hr />
-        <div
-          id="post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+      <div id="blog-post">
+        <section
+          className="hero is-large"
+          style={{ backgroundImage: "url('https://placeimg.com/800/600')" }}
+        >
+          <div className="hero-body container">
+            <h1 className="title has-text-white">{post.frontmatter.title}</h1>
+            <p className="is-size-4 has-text-white">{post.frontmatter.date}</p>
+          </div>
+        </section>
+        <section className="section">
+          <div className="container">
+            <div
+              id="post-content"
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+          </div>
+        </section>
       </div>
     );
   }

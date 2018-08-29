@@ -1,0 +1,15 @@
+// Blog Summary Imports
+@import "../../assets/variables";
+
+.content {
+  figure {
+    margin: 0;
+  }
+}
+
+.post-card {
+  .tag {
+    font-size: 1.25rem;
+    margin: 3px 5px;
+  }
+}

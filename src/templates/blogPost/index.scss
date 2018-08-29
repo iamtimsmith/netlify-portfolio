@@ -3,5 +3,13 @@
 @import "../../assets/keyframes";
 
 #blog-post {
-  margin-top: 65px;
+  margin-top: 55px;
+  .hero {
+    background-size: cover;
+    background-position: center center;
+    text-shadow: 0 0 20px #333;
+    h1 {
+      font-family: $serif;
+    }
+  }
 }

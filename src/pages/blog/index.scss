@@ -4,4 +4,20 @@
 
 #blog {
   margin-top: 65px;
+  min-height: 750px;
+  h1 {
+    font-family: $serif;
+  }
+  @for $i from 1 through 100 {
+    .post-card .card:nth-child(#{$i}) {
+      $delay: $i * 0.5s;
+      position: relative;
+      top: 20px;
+      opacity: 0;
+      animation: onLoad 1s linear $delay 1 forwards;
+      -webkit-animation: onLoad 1s linear $delay 1 forwards;
+      -moz-animation: onLoad 1s linear $delay 1 forwards;
+      -o-animation: onLoad 1s linear $delay 1 forwards;
+    }
+  }
 }
