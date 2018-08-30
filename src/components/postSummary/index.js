@@ -7,7 +7,7 @@ export default props => (
     <article className="card">
       <div className="card-image">
         <figure className="image">
-          <img src="https://placeimg.com/400/400" alt={props.title} />
+          <img src={props.thumb} alt={props.title} />
         </figure>
       </div>
       <div className="card-content">

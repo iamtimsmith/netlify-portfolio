@@ -4,25 +4,28 @@ import "./index.scss";
 export default class BlogPost extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      post: this.props.data.markdownRemark
+    };
   }
   render() {
-    const post = this.props.data.markdownRemark;
     return (
       <div id="blog-post">
         <section
           className="hero is-large"
-          style={{ backgroundImage: "url('https://placeimg.com/800/600')" }}
+          style={{
+            backgroundImage: `url("${this.state.post.frontmatter.image}")`
+          }}
         >
-          <div className="hero-body container">
-            <h1 className="title has-text-white">{post.frontmatter.title}</h1>
-            <p className="is-size-4 has-text-white">{post.frontmatter.date}</p>
-          </div>
+          <div className="hero-body container" />
         </section>
         <section className="section">
           <div className="container">
+            <h1 className="is-size-1">{this.state.post.frontmatter.title}</h1>
+            <p className="is-size-4">{this.state.post.frontmatter.date}</p>
             <div
               id="post-content"
-              dangerouslySetInnerHTML={{ __html: post.html }}
+              dangerouslySetInnerHTML={{ __html: this.state.post.html }}
             />
           </div>
         </section>
@@ -39,6 +42,8 @@ export const query = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         path
+        image
+        tags
       }
     }
   }
