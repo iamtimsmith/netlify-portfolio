@@ -12,7 +12,7 @@ export default class BlogPost extends React.Component {
   render() {
     const disqusShortname = "iamtimsmith";
     const disqusConfig = {
-      url: this.state.post.frontmatter.path,
+      url: `https://www.iamtimsmith.com/blog/${this.state.post.frontmatter.path}`,
       identifier: this.state.post.frontmatter.path,
       title: this.state.post.frontmatter.title
     };
