@@ -46,3 +46,10 @@ html {
   select:focus, 
   a:focus {outline:none!important;}
 }
+
+.fa-devto {
+  background-image: url('https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg');
+  background-repeat: no-repeat;
+  display:block;
+  
+}

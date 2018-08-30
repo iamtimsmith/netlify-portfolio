@@ -1,0 +1,38 @@
+// Imports
+@import "../../assets/variables";
+@import "../../assets/keyframes";
+
+#blog {
+  margin-top: 65px;
+  min-height: 750px;
+  form {
+    padding: 50px 0;
+    #search-bar {
+      font-size: 1.8rem;
+    }
+  }
+  h1 {
+    font-family: $serif;
+  }
+  @for $i from 1 through 100 {
+    .posts:nth-child(#{$i}) .card {
+      $delay: $i * 0.5s;
+      position: relative;
+      top: 20px;
+      opacity: 0;
+      animation: onLoad 1s linear $delay 1 forwards;
+      -webkit-animation: onLoad 1s linear $delay 1 forwards;
+      -moz-animation: onLoad 1s linear $delay 1 forwards;
+      -o-animation: onLoad 1s linear $delay 1 forwards;
+    }
+  }
+  .post-card {
+    .card {
+      transition: all 0.3s;
+      &:hover {
+        margin-top: -5px;
+        box-shadow: 0 0 30px #bbb;
+      }
+    }
+  }
+}

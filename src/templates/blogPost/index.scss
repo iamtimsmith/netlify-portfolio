@@ -1,0 +1,43 @@
+//Imports
+@import "../../assets/variables";
+@import "../../assets/keyframes";
+
+#blog-post {
+  margin-top: 55px;
+  margin-bottom: 55px;
+  .hero {
+    background-size: cover;
+    background-position: center center;
+  }
+  h1.is-size-1,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $serif;
+  }
+  #post-content {
+    margin-bottom: 50px;
+    h3 {
+      &:before {
+        content: "#";
+        font-family: $serif;
+        color: $grey;
+        font-weight: 700;
+        font-size: 4.5rem;
+        margin-right: 5px;
+        position: relative;
+        top: 5px;
+      }
+    }
+    h4 {
+      margin-top: 40px;
+      color: $grey;
+    }
+    pre {
+      margin: 35px 0;
+    }
+  }
+}
