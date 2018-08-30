@@ -31,7 +31,7 @@ export default class BlogPost extends React.Component {
             <h1 className="is-size-1">{this.state.post.frontmatter.title}</h1>
             <div className="columns">
               <div className="column is-narrow">
-                <p className="is-size-4">{this.state.post.frontmatter.date}</p>
+                <p className="is-size-5">{this.state.post.frontmatter.date}</p>
               </div>
               <div className="column is-narrow">
                 <CommentCount
@@ -41,12 +41,16 @@ export default class BlogPost extends React.Component {
               </div>
             </div>
             <hr />
+            <br />
             <div
               id="post-content"
               dangerouslySetInnerHTML={{ __html: this.state.post.html }}
             />
+            <DiscussionEmbed
+              shortname={disqusShortname}
+              config={disqusConfig}
+            />
           </div>
-          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </section>
       </div>
     );
