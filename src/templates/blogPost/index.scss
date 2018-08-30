@@ -4,12 +4,15 @@
 
 #blog-post {
   margin-top: 55px;
+  margin-bottom: 55px;
   .hero {
     background-size: cover;
     background-position: center center;
-    text-shadow: 0 0 20px #333;
-    h1 {
-      font-family: $serif;
-    }
+  }
+  h1.is-size-1 {
+    font-family: $serif;
+  }
+  #post-content {
+    margin-bottom: 50px;
   }
 }

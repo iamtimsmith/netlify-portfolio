@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.1",
+    "disqus-react": "^1.0.5",
     "font-awesome": "^4.7.0",
     "gatsby": "^1.9.273",
     "gatsby-link": "^1.6.40",

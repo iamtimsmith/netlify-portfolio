@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import "./index.scss";
 
 export default props => (
-  <Link to={`/blog/${props.path}`} class="post-card">
+  <Link to={`/blog/${props.path}`} className="post-card">
     <article className="card">
       <div className="card-image">
         <figure className="image">
@@ -13,7 +13,9 @@ export default props => (
       <div className="card-content">
         <h4>{props.title}</h4>
         {props.tags.map(tag => (
-          <span className="tag is-light">{tag}</span>
+          <span className="tag is-light" key={tag}>
+            {tag}
+          </span>
         ))}
       </div>
     </article>
