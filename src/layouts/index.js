@@ -48,7 +48,11 @@ export default class Layout extends Component {
     const isHome = this.props.location.pathname == "/" ? "is-home" : "is-page";
     return (
       <div className={isHome}>
-        <Helmet title={this.state.siteTitle} meta={[]} />
+        <Helmet>
+          <title>{this.state.siteTitle}</title>
+          <meta name="google-site-verification" content="iFym4FO-P-GAFVD7tV3bfh9hHWYtUu_wZhR0f3-pppg" />
+        </Helmet>
+        
         <div className={`content `}>
           <Header
             title={this.state.siteTitle}
