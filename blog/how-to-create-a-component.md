@@ -1,10 +1,10 @@
 ---
-title: "React: How to Create a Component"
-date: "2018-08-21"
+title: 'React: How to Create a Component'
+date: '2018-08-21'
 path: how-to-create-a-component
-tags: "#reactjs #javascript"
-image: /assets/pexels-photo-574070.jpeg
-keywords: "react, component, javascript"
+tags: '#reactjs #javascript'
+image: /assets/pexels-photo-1148496.jpeg
+keywords: 'react, component, javascript'
 ---
 
 Components are an essential part of any React application. In this post, we'll be learning how to create components to do whatever we want.
