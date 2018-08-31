@@ -1,6 +1,6 @@
 ---
 title: 'React: How to Create a Component'
-date: '2018-08-21'
+date: '2018-08-13'
 path: how-to-create-a-component
 tags: '#reactjs #javascript'
 image: /assets/pexels-photo-1148496.jpeg
