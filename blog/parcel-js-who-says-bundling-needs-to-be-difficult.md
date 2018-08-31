@@ -2,7 +2,7 @@
 title: 'Parcel.js: Who says bundling needs to be difficult?'
 date: '2018-08-31'
 path: parcel-js-who-says-bundling-needs-to-be-difficult
-tags: 'reactjs, javascript, misc'
+tags: '#reactjs, #javascript'
 image: /assets/parcel.png
 keywords: 'parcel, javascript, how to set up a project'
 ---
