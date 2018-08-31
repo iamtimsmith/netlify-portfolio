@@ -193,3 +193,5 @@ Your terminal now says `Server running at http://localhost:1234`. Let's open up 
 
 ### Conclusion
 We've now seen how easy it is to get up and running with Parcel. While tools like Webpack offer more customizations for enterprise level applications, Parcel is great for smaller or new applications as well as prototyping. I highly recommend reaching for Parcel the next time you're starting a new project.
+
+You can find the code for this [here](https://github.com/iamtimsmith/parcel-setup).
