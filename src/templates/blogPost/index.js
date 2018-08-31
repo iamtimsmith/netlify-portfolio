@@ -1,5 +1,6 @@
 import React from "react";
 import { DiscussionEmbed, CommentCount } from "disqus-react";
+import { SimpleShareButtons } from "react-simple-share";
 import "./index.scss";
 
 export default class BlogPost extends React.Component {
@@ -12,7 +13,9 @@ export default class BlogPost extends React.Component {
   render() {
     const disqusShortname = "iamtimsmith";
     const disqusConfig = {
-      url: `https://www.iamtimsmith.com/blog/${this.state.post.frontmatter.path}`,
+      url: `https://www.iamtimsmith.com/blog/${
+        this.state.post.frontmatter.path
+      }`,
       identifier: this.state.post.frontmatter.path,
       title: this.state.post.frontmatter.title
     };
@@ -33,19 +36,22 @@ export default class BlogPost extends React.Component {
               <div className="column is-narrow">
                 <p className="is-size-5">{this.state.post.frontmatter.date}</p>
               </div>
-              <div className="column is-narrow">
-                <CommentCount
-                  shortname={disqusShortname}
-                  config={disqusConfig}
-                />
+              <div className="column">
+                <SimpleShareButtons color="#ccc" size="30px" />
               </div>
             </div>
+
             <hr />
             <br />
             <div
               id="post-content"
               dangerouslySetInnerHTML={{ __html: this.state.post.html }}
             />
+            <div className="has-text-centered">
+              Share this article:
+              <SimpleShareButtons color="#222" size="50px" />
+            </div>
+            <br />
             <DiscussionEmbed
               shortname={disqusShortname}
               config={disqusConfig}
