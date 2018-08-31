@@ -1,10 +1,10 @@
 ---
-title: "React: Class Components vs. Stateless Functional Components"
-date: "2018-08-28"
+title: 'React: Class Components vs. Stateless Functional Components'
+date: '2018-08-22'
 path: class-components-vs-stateless-functional-components
-tags: "#reactjs #javascript"
+tags: '#reactjs #javascript'
 image: /assets/pexels-photo-574070.jpeg
-keywords: "react, component, javascript"
+keywords: 'react, component, javascript'
 ---
 
 When I first began to learn React, I didn't even realize there was a difference between class components and stateless functional components. I thought they were just different ways to write the same thing.
