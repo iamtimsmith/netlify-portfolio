@@ -1,5 +1,7 @@
 import React from "react";
 import { DiscussionEmbed, CommentCount } from "disqus-react";
+import Helmet from "react-helmet";
+import SocialShare from "../../components/socialShare";
 import "./index.scss";
 
 export default class BlogPost extends React.Component {
@@ -20,6 +22,27 @@ export default class BlogPost extends React.Component {
     };
     return (
       <div id="blog-post">
+        <Helmet>
+          <title>{this.state.post.frontmatter.title} | Tim Smith</title>
+          <meta description="Hi, I'm a freelance front-end developer from the Quad Cities that you can trust. To hire me, just drop me a line!" />
+          <meta
+            property="og:url"
+            content={`https://www.iamtimsmith.com/blog/${
+              this.state.post.frontmatter.path
+            }`}
+          />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:title"
+            content={this.state.post.frontmatter.title}
+          />
+          <meta
+            property="og:image:secure_url"
+            content={`https://www.iamtimsmith.com/blog/${
+              this.state.post.frontmatter.path
+            }`}
+          />
+        </Helmet>
         <section
           className="hero is-large"
           style={{
@@ -44,11 +67,18 @@ export default class BlogPost extends React.Component {
               dangerouslySetInnerHTML={{ __html: this.state.post.html }}
             />
             <br />
-            <DiscussionEmbed
-              shortname={disqusShortname}
-              config={disqusConfig}
-            />
+            <div id="post-comments">
+              <DiscussionEmbed
+                shortname={disqusShortname}
+                config={disqusConfig}
+              />
+            </div>
           </div>
+          <SocialShare
+            url={`https://www.iamtimsmith.com/blog/${
+              this.state.post.frontmatter.path
+            }`}
+          />
         </section>
       </div>
     );

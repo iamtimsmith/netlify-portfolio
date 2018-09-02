@@ -50,6 +50,7 @@ export default class Layout extends Component {
       <div className={isHome}>
         <Helmet>
           <title>{this.state.siteTitle}</title>
+          <meta description="Hi, I'm a freelance front-end developer from the Quad Cities that you can trust. To hire me, just drop me a line!" />
           <meta name="google-site-verification" content="q0cqZMFOFIpPzXHCvButtaaA27KQv3I3oVuGQX7Vd10" />
         </Helmet>
         
