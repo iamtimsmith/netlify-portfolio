@@ -25,6 +25,12 @@ class SocialShare extends React.Component {
           website: "linkedin"
         },
         {
+          url: `https://pinterest.com/pin/create/button/?url=${
+            this.props.url
+          }&media=${this.props.image}&description=${this.props.title}`,
+          website: "pinterest"
+        },
+        {
           url: `mailto:?&body=Check%20this%20article%20out!%0A%0A${
             this.props.url
           }`,
@@ -33,21 +39,33 @@ class SocialShare extends React.Component {
       ]
     };
     this.openWindow = this.openWindow.bind(this);
+    this.socialScroll = this.socialScroll.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener("scroll", e => {
-      const top = window.pageYOffset;
-      const content = document.querySelector("#post-content").offsetTop + 200;
-      const comments = document.querySelector("#post-comments").offsetTop - 150;
+    window.addEventListener("scroll", this.socialScroll);
+  }
+
+  componentWillUnmount() {
+    window.addEventListener("scroll", this.socialScroll);
+  }
+
+  socialScroll(e) {
+    const top = window.pageYOffset;
+    const socialEl = document.querySelector("#post-content");
+
+    if (document.body.contains(socialEl)) {
+      const socialContent =
+        document.querySelector("#post-content").offsetTop + 200;
+      const socialComments =
+        document.querySelector("#post-comments").offsetTop - 150;
       const socialShare = document.querySelector("#socialShare");
-      console.log(comments);
-      if (top > content && top < comments) {
+      if (top > socialContent && top < socialComments) {
         socialShare.classList.add("is-shareable");
       } else {
         socialShare.classList.remove("is-shareable");
       }
-    });
+    }
   }
 
   openWindow(url) {

@@ -5,17 +5,22 @@ import "./index.scss";
 export default class PortfolioPage extends React.Component {
   constructor(props) {
     super(props);
-    this.handleScroll = this.handleScroll.bind(this);
+    this.workScroll = this.workScroll.bind(this);
   }
   componentDidMount() {
     const page = document.getElementById("portfolioPage");
-    window.addEventListener("scroll", this.handleScroll, true);
+    window.addEventListener("scroll", this.workScroll, true);
   }
-  handleScroll(e) {
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.workScroll);
+  }
+  workScroll(e) {
     const top = window.pageYOffset;
-    const content = document.querySelector(".section:nth-child(2)");
-    if (top >= content.offsetTop - 200) {
-      content.classList.add("display");
+    const workContent = document.querySelector(".section:nth-child(2)");
+    if (document.body.contains(workContent)) {
+      if (top > workContent.offsetTop - 200) {
+        workContent.classList.add("display");
+      }
     }
   }
   render() {

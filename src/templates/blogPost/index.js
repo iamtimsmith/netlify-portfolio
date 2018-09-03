@@ -78,6 +78,10 @@ export default class BlogPost extends React.Component {
             url={`https://www.iamtimsmith.com/blog/${
               this.state.post.frontmatter.path
             }`}
+            image={`https://www.iamtimsmith.com/${
+              this.state.post.frontmatter.image
+            }`}
+            title={this.state.post.frontmatter.title}
           />
         </section>
       </div>
