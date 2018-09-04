@@ -13,17 +13,21 @@ export default ({ data }) => (
           pages that are available though...
         </p>
         <div className="columns">
-          {data.allMarkdownRemark.edges.map(({ node }) => (
-            <div className="column is-4" key={node.frontmatter.path}>
-              <Summary
-                title={node.frontmatter.title}
-                excerpt={node.excerpt}
-                path={node.frontmatter.path}
-                tags={node.frontmatter.tags.split(" ")}
-                thumb={node.frontmatter.image}
-              />
-            </div>
-          ))}
+          {data.allMarkdownRemark.edges.map(({ node }, index) => {
+            if (index <= 2) {
+              return (
+                <div className="column is-4" key={node.frontmatter.path}>
+                  <Summary
+                    title={node.frontmatter.title}
+                    excerpt={node.excerpt}
+                    path={node.frontmatter.path}
+                    tags={node.frontmatter.tags.split(" ")}
+                    thumb={node.frontmatter.image}
+                  />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     </section>
