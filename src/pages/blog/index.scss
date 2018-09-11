@@ -5,6 +5,12 @@
 #blog {
   margin-top: 65px;
   min-height: 750px;
+  position:relative;
+  top:20px;
+  animation:onLoad 1s linear .5s 1 forwards;
+  -webkit-animation:onLoad 1s linear .5s 1 forwards;
+  -moz-animation:onLoad 1s linear .5s 1 forwards;
+  -o-animation:onLoad 1s linear .5s 1 forwards;
   form {
     padding: 50px 0;
     #search-bar {
