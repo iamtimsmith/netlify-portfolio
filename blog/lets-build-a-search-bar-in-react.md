@@ -10,28 +10,34 @@ I know, I know...another task app...
 
 Hear me out though! We are going to build a task app that also filters the list based on a search query in real time. Sound complicated? It's not as complicated as you may think, so let's dig in!
 
-> __A quick note before we begin:__
+> **A quick note before we begin:**
 > I'm going to be using Parcel as a bundler. It's pretty awesome and SUPER
 > easy to set up. I have another article about setting up a project with parcel 
 > that will give you more information about the setup, so if I run through it too 
 > fast here, I'd recommend checking that out [here](https://www.iamtimsmith.com/blog/parcel-js-who-says-bundling-needs-to-be-difficult).
 
 ### Set up our files
+
 To get started, we will be creating our directory and entering it using the command line. To do this, open up your terminal and navigate to the directory in which you want to put your project. Once there, use the following line of code to create the directory for our project and enter it.
+
 ```
-mkdir search-tasks && $_
+mkdir search-tasks && cd $_
 ```
 
 Now that we are in our project folder, we need to initialize our project with yarn or npm. I'll be using yarn for this project but the npm commands are pretty much the same.
+
 ```
 yarn init -y
 ```
+
 We are going to just use the `-y` flag so it automatically configures things for us. We will go in and modify the `package.json` file soon.
 
 Now that we have a `package.json` file, we should create our `index.html` and `app.js` files. You can use the line of code below in your terminal to create these two files at the same time.
+
 ```
 touch index.html app.js
 ```
+
 Next we need to open our `index.html` file for editing and put the code below inside:
 
 ```
@@ -53,7 +59,9 @@ Next we need to open our `index.html` file for editing and put the code below in
 <img src="https://thepracticaldev.s3.amazonaws.com/i/d7j7e1fshxeaaxe1j9qo.jpeg" alt="Add packages to our project">
 
 ### Add packages to our project
-Next we need to install the necessary packages to our packages. In this case it's going to be React, React DOM, Parcel, Babel-Preset-env, Babel-Preset-React, and Bulma. To add these to our project, you can use NPM or Yarn. I will provide code for both, so you can choose whichever you are more comfortable with.
+
+Next we need to install the necessary packages to our project. In this case it's going to be React, React DOM, Parcel, Babel-Preset-env, Babel-Preset-React, and Bulma. To add these to our project, you can use NPM or Yarn. I will provide code for both, so you can choose whichever you are more comfortable with.
+
 ```
 npm install react react-dom parcel babel-preset-env babel-preset-react bulma --save-dev
 
@@ -63,20 +71,26 @@ yarn add react react-dom parcel babel-preset-env babel-preset-react bulma
 ```
 
 #### What do these do?
+
 NPM and Yarn are package managers that allow you to add prewritten code into your project. This can speed up development time astronomically. Below you'll find a quick description of what each of these packages do.
-- React: A library to speed up development (seems obvious for a React tutorial, right?) [Link](https://reactjs.org/)
-- React-DOM: A library which allows React to interact with the DOM in a browser.[Link](https://reactjs.org/docs/react-dom.html)
-- Parcel: A bundling library which requires no config. [Link](https://parceljs.org/)
-- Babel-preset-env: A library which tells Parcel how to transform ES6 to work with many different browsers. [Link](https://babeljs.io/docs/en/babel-preset-env.html)
-- Babel-preset-react: A library which tells Parcel how to handle JSX. [Link](https://babeljs.io/docs/en/babel-preset-react)
-- Bulma: A CSS framework that uses flexbox and is easy to use. [Link](https://bulma.io/)
+
+* React: A library to speed up development (seems obvious for a React tutorial, right?) [Link](https://reactjs.org/)
+* React-DOM: A library which allows React to interact with the DOM in a browser.[Link](https://reactjs.org/docs/react-dom.html)
+* Parcel: A bundling library which requires no config. [Link](https://parceljs.org/)
+* Babel-preset-env: A library which tells Parcel how to transform ES6 to work with many different browsers. [Link](https://babeljs.io/docs/en/babel-preset-env.html)
+* Babel-preset-react: A library which tells Parcel how to handle JSX. [Link](https://babeljs.io/docs/en/babel-preset-react)
+* Bulma: A CSS framework that uses flexbox and is easy to use. [Link](https://bulma.io/)
 
 ### Set up package.json and .babelrc
+
 Before we can actually start building our React project, we need to add a `.babelrc` file to include the babel-presets we installed. First, create the file using the code:
+
 ```
 touch .babelrc && open $_
 ```
+
 Once inside the file, we will add the following code to include the installed presets.
+
 ```
 {
   "presets": ["env", "react"]
@@ -84,13 +98,17 @@ Once inside the file, we will add the following code to include the installed pr
 ```
 
 ### Set up app.js file
+
 Still with me? Great! The next step is to set up a component in our `app.js` file. We will be using state to manage our list, so we need to use a class component for this. First, let's import the necessary libraries to build our app.
+
 ```
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import 'bulma/bulma';
 ```
+
 Then we can create an App component:
+
 ```
 class App extends Component {
   render() {
@@ -100,11 +118,15 @@ class App extends Component {
   }
 }
 ```
+
 Then we need to make sure that our component is rendering to the DOM. We will use React DOM for this.
+
 ```
 ReactDOM.render(<App />, document.getElementById('app'));
 ```
+
 Now we can add in our constructor and state. We will create a 'list' array in state. To start with, we will populate it with a few items so we can see our list:
+
 ```
 class App extends Component {
   constructor(props) {
@@ -120,7 +142,9 @@ class App extends Component {
   ...
 }
 ```
+
 Awesome! Now that we have our list in the App component's state, lets display that list. I'm using Bulma for my styles, but you may be using something different. That's totally cool, you'll just need to adjust your classes accordingly.
+
 ```
 class App extends Component {
   ...
@@ -141,16 +165,21 @@ class App extends Component {
   }
 }
 ```
+
 #### What is the code above doing?
+
 We need to render our list. To do this, we are using a few Bulma classes to help give things a bit of room to breathe. The important part is happening with the `<ul>`. First we create the `<ul>` in which we want to display our list. Then we're going to escape the JSX by using curly braces and use a javascript function called `.map()`. We get the list we made in state with `this.state.list` and add `.map()` to the end of it. We then pass a callback function (in this case we're using an arrow function) to return the JSX we want to show. 
 
 A `.map()` function works similarly to a `foreach` because it loops through each item in the array. The argument we pass into the callback function (in this case `item`) will represent the item in each iteration of the loop. Inside of the return we will create an `<li>` and the text it will display will be `item`, or the text in the current index of our list array.
 
 #### What do we get?
+
 If we go back to our terminal and type in `yarn start` or `npm run start`, we can go to `localhost:1234` in our browser to see the to-do list we made showing as an unordered list. Now lets allow users to add to-do items to the list.
 
 ### Adding items to the list
+
 This will be pretty simple. First we need to add the code to render an input box and a submit button. Our complete code for the rendered component should look like this for now:
+
 ```
 <div className="content">
   <div className="container">
@@ -180,7 +209,9 @@ This will be pretty simple. First we need to add the code to render an input box
 ```
 
 #### Add functionality to add item
+
 Now that we have an input and button rendered, we need to make it do something. Otherwise our users won't be able to change the list at all. To do this, we need to add a function called `addItem()` to our component below the constructor but before the render method. We need this to run when we click our button. Upon click, it should take the text in the input and see if it's not empty. If it has text we will add it to the array in our state which will then update our rendered page. The following function will add the necessary functionality to our input:
+
 ```
 addItem(e) {
     // Prevent button click from submitting form
@@ -208,24 +239,31 @@ addItem(e) {
     }
   }
 ```
+
 We now have our function built but it doesn't know when to run or how to interperet the `this` keyword. We can tell react how to handle this with the following code in our constructor:
+
 ```
 this.addItem = this.addItem.bind(this);
 ```
+
 And we can add an onClick trigger to our button, so our button should look like this:
+
 ```
 <button className="button is-info" onClick={this.addItem}>
   Add Item
 </button>
 ```
+
 We can test our application by using `yarn start` or `npm run start` and going to `localhost:1234` in our browser. Our app now allows us to add an item to the list! Pretty cool!
 
 <img src="https://media.giphy.com/media/vohOR29F78sGk/giphy.gif" alt="Add a delete button" />
 
 ### Adding a Delete button
+
 Okay, so now our users can add items but what good does that do if they can't remove them once they're done? They'll just have items upon items upon items until the entropy peaks their anxiety levels and puts them in the grave early. Let's go ahead and save a few lives by adding a delete button, shall we?
 
 Just like before, we'll be adding a function to handle this. The code below will allow our users to delete their list items when completed:
+
 ```
 removeItem(item) {
     // Put our list into an array
@@ -244,14 +282,19 @@ removeItem(item) {
     });
   }
 ```
+
 #### Add to constructor
+
 We also need to add this function to the constructor. Just like before, we can do this like so:
+
 ```
 this.removeItem = this.removeItem.bind(this);
 ```
 
 #### Add button to delete item
+
 To make it easy for users to delete the item, we should add a delete button to the `<li>`. The code below will do that.
+
 ```
 ...
 <ul>
@@ -271,9 +314,11 @@ To make it easy for users to delete the item, we should add a delete button to t
 Now we can run `yarn start` or `npm run start` in the terminal to view our changes. Now we can click on the x to delete that item from the list. Did it work?
 
 ### Turning the list into a component
+
 Whew! So far, so good.
 
 Next we are going to turn our list into a component with it's own state and methods. I'm just going to create the component within our app.js file to keep things simple, but you could also create this component in a separate file and import it. Below the App component, create a class component called List with the following code:
+
 ```
 class List extends React.Component {
     render() {
@@ -285,7 +330,9 @@ class List extends React.Component {
     }
 }
 ```
+
 The code we want to render is just our list, so go back up to our App component and grab the following code to paste into the render function for our List component:
+
 ```
 <ul>
   {this.state.list.map(item => (
@@ -301,14 +348,17 @@ The code we want to render is just our list, so go back up to our App component 
 ```
 
 Replace that code in the App component with a call to our List component like so:
+
 ```
 <List items={this.state.list} delete={this.removeItem} />
 ```
 
 #### What's the code above doing?
+
 Here, we are calling the List component and passing a few props in. The `items` prop is sending in the list we have stored in our state. The `delete` prop is passing in the `removeItem` method we created to delete the items.
 
 Before this will work as expected, we need to modify our List component a bit. First we need to add the constructor so we can receive props.
+
 ```
 class List extends React.Component {
     constructor(props) {
@@ -317,18 +367,23 @@ class List extends React.Component {
     ...
 }
 ```
+
 If we run the application with `npm run start` or `yarn start`, the application should look the same as it did before. We can still add items to our list with no problem. If we click the delete button...uh oh...it doesn't work. Why is this?
 
 We don't have a method called `removeItem` within this component, so clicking the button doesn't call anything. Fortunately, we had the foresight to pass that method into this component as a prop. To regain the delete functionality, we can just alter the code for that button to the following:
+
 ```
 <span className="delete" onClick={() => this.props.delete(item)} />
 ```
+
 So with a few adjustments, we now have a fully functioning list in a separate component. Now, onward to adding a search function.
 
 ### Create a filtered item in List
+
 The first part of adding a search bar will be to create an array of our filtered list.If the input bar is empty, it should display all items in the list. If there is text in the search bar, it should only show items that contain that text.
 
 First, we'll add state to our List component and give it an array called filtered. The code below illustrates this.
+
 ```
 class List extends React.Component {
     constructor(props) {
@@ -349,6 +404,7 @@ Our original list of tasks is located in the App component, which in this case i
 Lifecycle methods allow us to "hook" into a component at various points in it's render process. In this case, we're going to use `componentDidMount` and `componentDidReceiveProps`. `componentDidMount` will allow us to put the data into our `filtered` array when the component is initially rendered. On the other hand, `componentDidReceiveProps` will fire any time the props being passed into the component are changed.
 
 To add these lifecycle methods to our List component, add the following code below the constructor but before the render function:
+
 ```
 componentDidMount() {
   this.setState({
@@ -370,7 +426,9 @@ Now if we change the `.map()` function we're using for our list to map over the 
 What's the big deal? The big deal is that now we have a list we can manipulate without altering the original list. All we have to do is modify our `filter` state and the items being displayed will also reflect that, but we haven't lost the original list by doing this.
 
 ### Create the search bar itself
+
 It seems to me that a good place to start with a search bar is...well...the search bar.Let's go ahead and create that. Inside of the div wrapper in our List component, lets add an input.
+
 ```
 <div>
     <input type="text" className="input" placeholder="Search..." />
@@ -383,6 +441,7 @@ It seems to me that a good place to start with a search bar is...well...the sear
 Cool! Now we have a search bar. If only it actually worked...
 
 ### Make the search bar search
+
 We have a nice looking search bar, but it doesn't really do anything other than look pretty. Maybe this is good enough, but I think there is more to life than just being really, really, ridiculously goodlooking. Let's add the "brains".
 
 <img src="https://media1.tenor.com/images/acfdeea24b2907dc5aab376551b69b22/tenor.gif?itemid=3547407" alt="Really Really Ridiculously Good Looking" />
@@ -429,18 +488,21 @@ handleChange(e) {
 > When using `.contains()`, it is case sensitive. This could make searching within our tasks more difficult for the user because they will have to know exactly what casing the item uses. To get around this, we can just change everything lowercase in our function so we know what case everything will be using when we do our search. The comments above also explain this.
 
 ### Adding the method to the input
+
 We're so close! Before we can use the `handleChange()` method, we need to bind the `this` keyword to it. Inside of our constructor, after the state, add the following code to bind our `this` keyword for the method.
+
 ```
 this.handleChange = this.handleChange.bind(this);
 ```
 
 Finally, we can add an event handler to the input item to call the method whenever the content is changed.This last piece will be what actually makes the search function work. Add `onChange={this.handleChange}` to the input element to make it look like this:
+
 ```
 <input type="text" className="input" onChange={this.handleChange} placeholder="Search..." />
 ```
 
-
 ### Conclusion
+
 Running the application should now allow you to create, delete, and search tasks.There's a lot of text here, but it's not actually THAT complicated.
 
 Was this helpful for you? If you run into any problems, let me know and I will get this tutorial updated. I have also added the codepen with the full code below so you can play around with it or compare code.
