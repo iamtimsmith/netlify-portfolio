@@ -33,7 +33,7 @@ export default class Layout extends Component {
         },
         { icon: "twitter", href: "https://twitter.com/iam_timsmith" },
         { icon: "github", href: "https://github.com/iamtimsmith" },
-        { icon: "dev-to", href: "https://dev.to/iam_timsmith" }
+        { icon: "dev", href: "https://dev.to/iam_timsmith" }
       ]
     };
   }
