@@ -1,4 +1,5 @@
 import React from "react";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import "./index.scss";
 
 class SocialShare extends React.Component {
@@ -8,32 +9,38 @@ class SocialShare extends React.Component {
       shareLinks: [
         {
           url: `https://www.facebook.com/sharer/sharer.php?u=${this.props.url}`,
+          type: 'fab',
           website: "facebook"
         },
         {
           url: `https://twitter.com/home?status=${this.props.url}`,
+          type: 'fab',
           website: "twitter"
         },
         {
           url: `https://plus.google.com/share?url=${this.props.url}`,
+          type: 'fab',
           website: "google-plus"
         },
         {
           url: `https://www.linkedin.com/shareArticle?mini=true&url=${
             this.props.url
           }`,
+          type: 'fab',
           website: "linkedin"
         },
         {
           url: `https://pinterest.com/pin/create/button/?url=${
             this.props.url
           }&media=${this.props.image}&description=${this.props.title}`,
+          type: 'fab',
           website: "pinterest"
         },
         {
           url: `mailto:?&body=Check%20this%20article%20out!%0A%0A${
             this.props.url
           }`,
+          type: 'fas',
           website: "envelope"
         }
       ]
@@ -83,7 +90,8 @@ class SocialShare extends React.Component {
               className={`column button is-${link.website}`}
               onClick={() => this.openWindow(link.url)}
             >
-              <span className={`fa fa-${link.website} fa-2x`} />
+            <FontAwesomeIcon icon={[link.type, link.website]} size="2x" />
+
             </a>
           ))}
         </div>
