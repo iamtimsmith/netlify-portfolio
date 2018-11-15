@@ -1,4 +1,5 @@
 import React from 'react';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import './index.scss';
 
 export default (props) => {
@@ -7,7 +8,7 @@ export default (props) => {
       {props.social.map(item => (
         <li key={item.icon}>
           <a href={item.href} style={{ fontSize:`${props.size}rem`}}>
-            <i className={`fa fa-${item.icon}`}></i>
+          <FontAwesomeIcon icon={['fab', item.icon]} />
           </a>
         </li>
       ))}

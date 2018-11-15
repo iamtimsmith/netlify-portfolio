@@ -2,6 +2,7 @@ import React from "react";
 import { DiscussionEmbed, CommentCount } from "disqus-react";
 import Helmet from "react-helmet";
 import SocialShare from "../../components/socialShare";
+import SEO from "../../components/SEO";
 import "./index.scss";
 
 export default class BlogPost extends React.Component {
@@ -43,6 +44,11 @@ export default class BlogPost extends React.Component {
             }`}
           />
         </Helmet>
+        <SEO
+          post={this.state.post.frontmatter}
+          path={this.state.post}
+          postSEO
+        />
         <section
           className="hero is-large"
           style={{

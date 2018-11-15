@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import Helmet from "react-helmet";
-require("font-awesome/css/font-awesome.css");
+// require("font-awesome/css/font-awesome.css");
 import "bulma";
 import "./index.scss";
 
 //Components
 import Header from "../components/header/";
 import Footer from "../components/footer/";
+
+// FontAwesome
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+library.add(fab, fas);
 
 export default class Layout extends Component {
   constructor(props) {
@@ -26,7 +33,7 @@ export default class Layout extends Component {
         },
         { icon: "twitter", href: "https://twitter.com/iam_timsmith" },
         { icon: "github", href: "https://github.com/iamtimsmith" },
-        { icon: "devto", href: "https://dev.to/iam_timsmith" }
+        { icon: "dev-to", href: "https://dev.to/iam_timsmith" }
       ]
     };
   }
@@ -53,7 +60,7 @@ export default class Layout extends Component {
           <meta description="Hi, I'm a freelance front-end developer from the Quad Cities that you can trust. To hire me, just drop me a line!" />
           <meta name="google-site-verification" content="q0cqZMFOFIpPzXHCvButtaaA27KQv3I3oVuGQX7Vd10" />
         </Helmet>
-        
+
         <div className={`content `}>
           <Header
             title={this.state.siteTitle}
