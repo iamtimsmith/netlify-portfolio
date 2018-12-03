@@ -44,11 +44,11 @@ export default class BlogPost extends React.Component {
             }`}
           />
         </Helmet>
-        <SEO
+        {/* <SEO
           post={this.state.post.frontmatter}
           path={this.state.post}
           postSEO
-        />
+        /> */}
         <section
           className="hero is-large"
           style={{
