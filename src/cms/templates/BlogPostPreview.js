@@ -1,5 +1,7 @@
 import React from "react";
 import SocialShare from "../../components/socialShare";
+import "bulma";
+import "../../templates/blogPost/index.scss";
 
 const BlogPostPreview = ({ entry, widgetFor }) => (
   <div>
